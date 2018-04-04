@@ -110,9 +110,15 @@ def count_negatives(seq):
     Type hints:
       :type seq: (list | tuple) of (int | float)
     """
-    
+    count = 0
+    for k in range(len(seq)):
+        if seq[k] < 0:
+            value = count + 1
+            count = value
+    return count
+
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -195,6 +201,21 @@ def run_test_count_short_ones():
 
     # TO DO 4 (continued):  Add your 2 ADDITIONAL test(s) here:
 
+    # Test 8:
+    expected = 2
+    seq = [[1], [1, 2], [1, 1, 3], [1, 2, 3, 4]]
+    actual = count_short_ones(seq)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 9:
+    expected = 3
+    seq = [[1], [1], [], [1, 4, 5]]
+    actual = count_short_ones(seq)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
 
 def count_short_ones(seq_of_lists):
     """
