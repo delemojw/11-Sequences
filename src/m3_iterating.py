@@ -238,10 +238,18 @@ def count_short_ones(seq_of_lists):
       :type seq_of_lists: (list | tuple) of (list | tuple | str)
     """
     count = 0
-    for k in range(len(seq_of_lists)):
-        if seq_of_lists[k] < 3:
-            count = count + 1
-    return count
+    for k in seq_of_lists:
+        if len(k) < 3:
+            value = count + 1
+            count = value
+    return count        
+
+    # count = 0
+    # seq = [seq_of_lists]
+    # for k in range(len(seq_of_lists)):
+    #     if seq_of_lists[k] < 3:
+    #         count = count + 1
+    # return count
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
