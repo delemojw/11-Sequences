@@ -242,16 +242,10 @@ def count_short_ones(seq_of_lists):
         if len(k) < 3:
             value = count + 1
             count = value
-    return count        
+    return count
 
-    # count = 0
-    # seq = [seq_of_lists]
-    # for k in range(len(seq_of_lists)):
-    #     if seq_of_lists[k] < 3:
-    #         count = count + 1
-    # return count
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
 
@@ -331,8 +325,16 @@ def draw_circles(window, points, radius, color):
       :type radius: int | float
       :type color: str
     """
+    window = rg.RoseWindow(500, 500)
+    for k in range(len(points)):
+        circle = rg.Circle(points[k], radius)
+        circle.fill_color = color
+        circle.attach_to(window)
+    window.render()
+
+
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Tests have been written for you (above).
     # ------------------------------------------------------------------
 
